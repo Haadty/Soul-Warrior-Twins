@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmbq2kyqg2a2f"]
+
+[ext_resource type="Script" path="res://scripts/checkPoint.gd" id="1_j137p"]
+[ext_resource type="Texture2D" uid="uid://baeaned2iatac" path="res://sprites/extraCut/posta_ligado_0.atlastex" id="2_h0nmx"]
+[ext_resource type="Texture2D" uid="uid://ddght7nctmohe" path="res://sprites/extraCut/posta_ligado_1.atlastex" id="3_5qcih"]
+[ext_resource type="Texture2D" uid="uid://dgv7bccgvsxlw" path="res://sprites/extraCut/posta_ligado_2.atlastex" id="4_kbnt6"]
+[ext_resource type="Texture2D" uid="uid://byl7uc5n73dv" path="res://sprites/poste normal-export.png" id="5_cgm2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrfjd"]
+size = Vector2(42.5, 45.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sho8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h0nmx")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_5qcih")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_kbnt6")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_5qcih")
+}],
+"loop": true,
+"name": &"ligado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cgm2d")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[node name="checkPoint" type="Area2D"]
+script = ExtResource("1_j137p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_vrfjd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sho8s")
+animation = &"ligado"
+frame_progress = 0.243198
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

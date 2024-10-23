@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bethmmluiqg0e"]
+
+[ext_resource type="Script" path="res://scripts/damageShape.gd" id="1_qmldi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yhac"]
+size = Vector2(64, 43)
+
+[node name="Damage" type="Area2D"]
+script = ExtResource("1_qmldi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7yhac")
+debug_color = Color(0.160244, 0.454537, 1, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
