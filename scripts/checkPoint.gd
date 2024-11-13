@@ -1,5 +1,9 @@
 extends Area2D
 
+#
+# sistema de checkpoint
+#
+
 @onready var skin = $AnimatedSprite2D
 var light = false
 
