@@ -1,0 +1,236 @@
+[gd_scene load_steps=21 format=3 uid="uid://boemuucddcjgf"]
+
+[ext_resource type="Texture2D" uid="uid://ceyr00to2akjl" path="res://sprites/UI/Simbolo Quebrado-Sheet.png" id="1_q74nv"]
+[ext_resource type="FontFile" uid="uid://blw5mpdt7e6p6" path="res://sprites/UI/fonts/NESCyrillic.ttf" id="2_tn7kg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4nfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_watp5"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1oh1"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46f5m"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ehwv"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5nnc"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na2hu"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trbt2"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31iin"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm3vn"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3muv"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(2700, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip3k3"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(3000, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhyt6"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(3300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t36ww"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(3600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnlcc"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(3900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyyjn"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(4200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8071e"]
+atlas = ExtResource("1_q74nv")
+region = Rect2(4500, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7bic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_watp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1oh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46f5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ehwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5nnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na2hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trbt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31iin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm3vn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3muv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip3k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhyt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t36ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnlcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyyjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8071e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4nfy")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Start"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tn7kg")
+theme_override_font_sizes/font_size = 48
+text = "START"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4nfy")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tn7kg")
+theme_override_font_sizes/font_size = 48
+text = "OPTIONS
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4nfy")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tn7kg")
+theme_override_font_sizes/font_size = 48
+text = "EXIT
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame" type="AnimatedSprite2D" parent="."]
+position = Vector2(573, 216)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_s7bic")
+autoplay = "default"
+frame_progress = 0.66485

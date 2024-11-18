@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="Soul Warrior Twins"
-run/main_scene="res://addons/phantom_camera/examples/example_scenes/2D-4.3/2d_limit_example_scene.tscn"
+run/main_scene="res://scenes/Test_Room.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-Events="*res://scripts/Events.gd"
+Global="*res://scripts/Global.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [display]
@@ -30,6 +30,10 @@ window/canvas_textures/default_texture_filter=1
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/sprite_cutter/plugin.cfg")
+
+[global_group]
+
+room=""
 
 [input]
 

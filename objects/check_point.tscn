@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmbq2kyqg2a2f"]
 
-[ext_resource type="Script" path="res://scripts/checkPoint.gd" id="1_j137p"]
-[ext_resource type="Texture2D" uid="uid://baeaned2iatac" path="res://sprites/extraCut/posta_ligado_0.atlastex" id="2_h0nmx"]
-[ext_resource type="Texture2D" uid="uid://ddght7nctmohe" path="res://sprites/extraCut/posta_ligado_1.atlastex" id="3_5qcih"]
-[ext_resource type="Texture2D" uid="uid://dgv7bccgvsxlw" path="res://sprites/extraCut/posta_ligado_2.atlastex" id="4_kbnt6"]
-[ext_resource type="Texture2D" uid="uid://byl7uc5n73dv" path="res://sprites/poste normal-export.png" id="5_cgm2d"]
+[ext_resource type="Script" path="res://scripts/Controls/Check_Point.gd" id="1_j137p"]
+[ext_resource type="Texture2D" uid="uid://baeaned2iatac" path="res://sprites/Level/CheckPoint/posta_ligado_0.atlastex" id="2_h0nmx"]
+[ext_resource type="Texture2D" uid="uid://ddght7nctmohe" path="res://sprites/Level/CheckPoint/posta_ligado_1.atlastex" id="3_5qcih"]
+[ext_resource type="Texture2D" uid="uid://dgv7bccgvsxlw" path="res://sprites/Level/CheckPoint/posta_ligado_2.atlastex" id="4_kbnt6"]
+[ext_resource type="Texture2D" uid="uid://byl7uc5n73dv" path="res://sprites/Level/CheckPoint/poste normal-export.png" id="5_cgm2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrfjd"]
 size = Vector2(42.5, 45.5)
