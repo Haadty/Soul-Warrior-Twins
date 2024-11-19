@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body:Node2D) -> void:
 	if body is PlayerPlataform and !light:
 		light = true
-		Events.spawn_point = position
+		Global.spawn_point = position
