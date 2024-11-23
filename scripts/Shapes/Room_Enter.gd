@@ -10,7 +10,3 @@ func _on_area_entered(area:Area2D) -> void:
 			Global.player_actual_area = area
 			
 		Global.camera_room_change.emit(area)
-
-
-
-

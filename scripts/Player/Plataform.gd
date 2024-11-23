@@ -27,7 +27,6 @@ var dash_timer := 0.0
 var facing_direction := 1.0
 var jump_buffer_time := 0.08
 var jump_buffer_timer := 0.0
-var process_self := true
 var coyote_time := 0.08
 var coyote_timer := coyote_time
 
@@ -93,11 +92,11 @@ var corner_correction := Vector2(8, 4)
 @onready var skin = $AnimatedSprite2D
 
 #
-# checkpoint
+# extras
 #
 
+var process_self := true
 var back := false
-
 #
 # verificadores de lado e sinais
 #
@@ -474,3 +473,25 @@ func update_back():
 	position = Global.spawn_point
 	skin.play("back")
 	back = false
+
+#
+# stop control
+# parar os controles do jogador 
+#
+
+func update_controls():
+	if process_self: 
+		skin.play("idle")
+		velocity = Vector2.ZERO
+		air_jump_used_ability = false
+		dash_has_ability = true
+		dash_after_dash_has_reset_speed = true
+		dash_refresh_timer_update = true
+		dash_refresh_timer_update_on_wall_latch = true
+		jumping = false
+		has_wall_jump = true
+		dash_refresh_timer = dash_refresh_time
+		process_self = false
+	else: 
+		process_self = true
+
