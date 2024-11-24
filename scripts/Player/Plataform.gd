@@ -479,8 +479,8 @@ func update_back():
 # parar os controles do jogador 
 #
 
-func update_controls():
-	if process_self: 
+func update_controls(type:bool):
+	if type: 
 		skin.play("idle")
 		velocity = Vector2.ZERO
 		air_jump_used_ability = false

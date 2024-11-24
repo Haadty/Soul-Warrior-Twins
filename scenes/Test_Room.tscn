@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_cod75"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_0pucg"]
 [ext_resource type="Script" path="res://scripts/Controls/Camera.gd" id="9_jw68b"]
-[ext_resource type="Script" path="res://scripts/Controls/Entrance.gd" id="11_q6pfi"]
+[ext_resource type="Script" path="res://scripts/Controls/Room_Enter.gd" id="11_q6pfi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3fmu"]
 texture = ExtResource("1_op1kn")
@@ -88,20 +88,26 @@ scale = Vector2(58.72, 1)
 
 [node name="Room_Entraces" type="Node2D" parent="."]
 
-[node name="Room_entrance_0" type="Area2D" parent="Room_Entraces"]
+[node name="Room_entrance_0" type="Area2D" parent="Room_Entraces" node_paths=PackedStringArray("left_area", "right_area")]
 position = Vector2(539, 233)
 script = ExtResource("11_q6pfi")
+left_area = NodePath("../../Camera_Limiters/Room_1")
+right_area = NodePath("../../Camera_Limiters/Room_0")
 
 [node name="Collision" type="CollisionShape2D" parent="Room_Entraces/Room_entrance_0"]
 shape = SubResource("RectangleShape2D_s8owi")
 debug_color = Color(0.904703, 0.152447, 0.652706, 0.42)
 
-[node name="Right" type="CollisionShape2D" parent="Room_Entraces/Room_entrance_0"]
+[node name="Right_area" type="Area2D" parent="Room_Entraces/Room_entrance_0"]
+
+[node name="Right" type="CollisionShape2D" parent="Room_Entraces/Room_entrance_0/Right_area"]
 position = Vector2(25.5, 0)
 shape = SubResource("RectangleShape2D_g6n4q")
 debug_color = Color(0, 0.494563, 0.536543, 0.42)
 
-[node name="Left" type="CollisionShape2D" parent="Room_Entraces/Room_entrance_0"]
+[node name="Left_area" type="Area2D" parent="Room_Entraces/Room_entrance_0"]
+
+[node name="Left" type="CollisionShape2D" parent="Room_Entraces/Room_entrance_0/Left_area"]
 position = Vector2(-25.5, 0)
 shape = SubResource("RectangleShape2D_l63al")
 debug_color = Color(0.847261, 0.692124, 0, 0.42)
@@ -164,3 +170,5 @@ process_physics_priority = 300
 script = ExtResource("9_0pucg")
 
 [connection signal="body_entered" from="Room_Entraces/Room_entrance_0" to="Room_Entraces/Room_entrance_0" method="_on_body_entered"]
+[connection signal="body_entered" from="Room_Entraces/Room_entrance_0/Right_area" to="Room_Entraces/Room_entrance_0" method="_on_right_area_body_entered"]
+[connection signal="body_entered" from="Room_Entraces/Room_entrance_0/Left_area" to="Room_Entraces/Room_entrance_0" method="_on_left_area_body_entered"]

@@ -14,6 +14,9 @@ func _ready():
 func change_room(area: Area2D) -> void:  
 	Global.player_actual_camera = area.find_child("Camera")
 
+	if Global.player_actual_area == null:
+		Global.player_actual_area = area
+
 	if area != Global.player_actual_area:
 		if Global.player_actual_camera == Global.player_actual_area.find_child("Camera"):
 			Global.player_actual_camera.set_priority(0)

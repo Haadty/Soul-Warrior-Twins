@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dffpbxblrccr8"]
+[gd_scene load_steps=44 format=3 uid="uid://dffpbxblrccr8"]
 
 [ext_resource type="Script" path="res://scripts/Player/Plataform.gd" id="1_my3gh"]
 [ext_resource type="Texture2D" uid="uid://df2odq48swk7m" path="res://sprites/Player/PlayerNormal/player_p_dash_0.atlastex" id="2_by7wa"]
@@ -41,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://bffdyn4fgrh0o" path="res://sprites/Player/PlayerNormal/player_p_startBattle_5.atlastex" id="30_qwmo4"]
 [ext_resource type="Texture2D" uid="uid://douwru4uqiokw" path="res://sprites/Player/PlayerNormal/player_p_startBattle_6.atlastex" id="31_pveuv"]
 [ext_resource type="Texture2D" uid="uid://dun7xba3cbsh6" path="res://sprites/Player/PlayerNormal/player_p_startBattle_7.atlastex" id="32_w0f4g"]
-[ext_resource type="Script" path="res://scripts/Shapes/Room_Enter.gd" id="44_lmmcx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ma2rn"]
 animations = [{
@@ -238,13 +237,3 @@ target_position = Vector2(18, 0)
 [node name="RaycastTwo" type="RayCast2D" parent="."]
 position = Vector2(0, -25)
 target_position = Vector2(18, 0)
-
-[node name="AreaCamera" type="Area2D" parent="."]
-monitorable = false
-script = ExtResource("44_lmmcx")
-
-[node name="Collision" type="CollisionShape2D" parent="AreaCamera"]
-position = Vector2(0, -2)
-shape = SubResource("1")
-
-[connection signal="area_entered" from="AreaCamera" to="AreaCamera" method="_on_area_entered"]
