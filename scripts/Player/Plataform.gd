@@ -48,7 +48,8 @@ var max_vspeed := 1000
 var jump_speed := -500
 var gravity := 1000
 var peak_gravity := 800
-var peak_gravity_threshold = 200
+var peak_gravity_threshold := 200
+var gravity_process_control := true
 var jump_cut := 0.2
 var can_cut_speed := true
 var jumping := false
@@ -96,6 +97,7 @@ var corner_correction := Vector2(8, 4)
 #
 
 var process_self := true
+var room_up_out = false
 var back := false
 #
 # verificadores de lado e sinais
@@ -109,6 +111,7 @@ enum Touching_Side {
 }
 
 var input_direction := Vector2.ZERO
+var input_process:= true
 var last_solid := Vector2(0, 0)
 
 #
@@ -158,7 +161,10 @@ func _physics_process(delta):
 		if wall_slide_latched == 0 and not on_floor() and not place_free(Vector2.UP):
 			last_solid = Vector2.UP
 		
-		update_input_direction()
+		if input_process:
+			update_input_direction()
+		else: 
+			input_direction = Vector2.ZERO
 		
 		update_facing_direction()
 		dash(delta)
@@ -242,10 +248,14 @@ func current_corner_correction() -> Vector2:
 	return corner_correction
 
 func current_gravity():
-	if jumping == true and Input.is_action_pressed("Jump") and last_solid == Vector2.DOWN and velocity.y < 0 and abs(velocity.y) < peak_gravity_threshold:
-		return peak_gravity
+	if !room_up_out:
+		if input_process and jumping and Input.is_action_pressed("Jump") and last_solid == Vector2.DOWN and velocity.y < 0 and abs(velocity.y) < peak_gravity_threshold:
+			return peak_gravity
+		else:
+			return gravity
 	else:
-		return gravity
+		room_up_out = false
+		return peak_gravity
 		
 func current_max_vspeed():
 	if wall_slide_latched:
@@ -260,7 +270,7 @@ func current_max_vspeed():
 #
 	
 func dash(_delta):
-	if Input.is_action_just_pressed("Dash"):
+	if input_process and Input.is_action_just_pressed("Dash"):
 		if can_move() and dash_has_ability and can_dash():
 			dash_direction = Vector2.ZERO
 			dash_direction.x = input_direction.x
@@ -287,7 +297,7 @@ func is_dashing():
 #
 
 func jump(_delta):
-	if Input.is_action_just_pressed("Jump"):
+	if input_process and Input.is_action_just_pressed("Jump"):
 		jump_buffer_timer = jump_buffer_time
 	if coyote_timer > 0 and not is_dashing():
 		if jump_buffer_timer > 0:
@@ -328,7 +338,7 @@ func jump(_delta):
 			jumping = true
 			air_jump_used_ability = true
 				
-	if Input.is_action_just_released("Jump") and jumping:
+	if input_process and Input.is_action_just_released("Jump") and jumping:
 		want_to_cut_speed = true
 	if want_to_cut_speed and can_move():
 		if velocity.y < 0 and can_cut_speed:
@@ -349,7 +359,7 @@ func wall_latching():
 			wall_slide_latch_on_timer = 0
 
 func process_gravity():
-	if wall_slide_latch_on_timer > 0 or is_dashing() == true:
+	if wall_slide_latch_on_timer > 0 or is_dashing() or !gravity_process_control:
 		return false
 	else:
 		return true
@@ -473,25 +483,3 @@ func update_back():
 	position = Global.spawn_point
 	skin.play("back")
 	back = false
-
-#
-# stop control
-# parar os controles do jogador 
-#
-
-func update_controls(type:bool):
-	if type: 
-		skin.play("idle")
-		velocity = Vector2.ZERO
-		air_jump_used_ability = false
-		dash_has_ability = true
-		dash_after_dash_has_reset_speed = true
-		dash_refresh_timer_update = true
-		dash_refresh_timer_update_on_wall_latch = true
-		jumping = false
-		has_wall_jump = true
-		dash_refresh_timer = dash_refresh_time
-		process_self = false
-	else: 
-		process_self = true
-
