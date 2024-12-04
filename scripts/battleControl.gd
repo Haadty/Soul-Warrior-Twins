@@ -75,7 +75,7 @@ func battlePanel():
 	else: 	
 		atackPanel.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 
 	if !player.inBattle and status.healtOne <= 0 and status.healtTwo <= 0: 
 		get_tree().reload_current_scene()

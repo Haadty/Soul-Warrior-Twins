@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="CaiDialog.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="inomeado.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.3843855"
+     inkscape:cx="234.40002"
+     inkscape:cy="479.99635"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="fill:#000000;stroke:#fffcfc;stroke-width:0.885234;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2"
+       width="131.40643"
+       height="78.489761"
+       x="18.266485"
+       y="71.206642"
+       inkscape:export-filename="dialog.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:type="star"
+       style="display:inline;fill:#f2f2f2;stroke:#fffcfc;stroke-width:0.665001;stroke-dasharray:none;stroke-opacity:1"
+       id="path8-9"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="36.12162"
+       sodipodi:cy="158.62935"
+       sodipodi:r1="9.1777258"
+       sodipodi:r2="4.5888634"
+       sodipodi:arg1="2.1183586"
+       sodipodi:arg2="3.1655561"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 31.343628,166.46526 0.190446,-7.94587 0.190448,-7.94586 6.786094,4.13786 6.786095,4.13787 -6.976541,3.808 z"
+       inkscape:transform-center-x="2.5128215"
+       inkscape:transform-center-y="-0.10886089"
+       transform="matrix(-1.1429431,0,0,0.99006686,71.945433,-16.369858)"
+       inkscape:export-filename="btVolt.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:type="star"
+       style="fill:#f2f2f2;stroke:#fffcfc;stroke-width:0.665001;stroke-dasharray:none;stroke-opacity:1"
+       id="path8"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="36.12162"
+       sodipodi:cy="158.62935"
+       sodipodi:r1="9.1777258"
+       sodipodi:r2="4.5888634"
+       sodipodi:arg1="2.1183586"
+       sodipodi:arg2="3.1655561"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 31.343628,166.46526 0.190446,-7.94587 0.190448,-7.94586 6.786094,4.13786 6.786095,4.13787 -6.976541,3.808 z"
+       inkscape:transform-center-x="-2.4883005"
+       inkscape:transform-center-y="-0.11017246"
+       transform="matrix(1.1317941,0,0,1.0019477,97.571745,-18.619729)"
+       inkscape:export-filename="btPass.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

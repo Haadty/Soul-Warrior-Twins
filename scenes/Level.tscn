@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b7l2jqvr7i8xy"]
+[gd_scene load_steps=26 format=4 uid="uid://b7l2jqvr7i8xy"]
 
 [ext_resource type="Texture2D" uid="uid://wcvac8545sk7" path="res://sprites/tile end.png" id="1_p7dwn"]
 [ext_resource type="Texture2D" uid="uid://tdrrh64747ga" path="res://sprites/Dungeon Tile Set (1)-export.png" id="1_t1fx3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/battleRoom.gd" id="2_ggcoi"]
 [ext_resource type="Script" path="res://scripts/CameraPlayer.gd" id="3_qxni5"]
 [ext_resource type="PackedScene" uid="uid://dm27tnx1td1fi" path="res://objects/room.tscn" id="3_uvu4w"]
+[ext_resource type="PackedScene" uid="uid://dy5lf17qqlkky" path="res://scenes/Dialogs.tscn" id="4_h68q7"]
 [ext_resource type="Texture2D" uid="uid://b36x7p5a0ed71" path="res://sprites/tileBlock.png" id="6_5wkfn"]
 [ext_resource type="Texture2D" uid="uid://crpslm1ldd37l" path="res://sprites/Dungeon Tile Set.png" id="6_gh1g7"]
 [ext_resource type="PackedScene" uid="uid://cmbq2kyqg2a2f" path="res://objects/check_point.tscn" id="8_hbevx"]
@@ -202,6 +203,9 @@ position = Vector2(4664, -752)
 
 [node name="room_23" parent="Rooms Normals" instance=ExtResource("3_uvu4w")]
 position = Vector2(5128, -239)
+
+[node name="Node2D" parent="Rooms Normals" instance=ExtResource("4_h68q7")]
+position = Vector2(123, 212)
 
 [node name="battleRoom" type="Node2D" parent="."]
 position = Vector2(5592, -239)

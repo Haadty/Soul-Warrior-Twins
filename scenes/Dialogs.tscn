@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy5lf17qqlkky"]
+
+[ext_resource type="Script" path="res://scripts/PlayerDialog_2d.gd" id="1_rpy2s"]
+[ext_resource type="Texture2D" uid="uid://c816bnamfjt0i" path="res://sprites/playerCut/player_p_awaken_7.atlastex" id="2_dpc0i"]
+[ext_resource type="Texture2D" uid="uid://cnem6r46nxkwu" path="res://assets/dialog.svg" id="3_h4sg8"]
+[ext_resource type="Texture2D" uid="uid://cgstbpls8efov" path="res://assets/btPass.png" id="4_2rgan"]
+[ext_resource type="Texture2D" uid="uid://frfl6nuouhap" path="res://assets/btVolt.png" id="5_686fv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7jis"]
+size = Vector2(20, 28)
+
+[sub_resource type="FontFile" id="FontFile_qrj17"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+position = Vector2(114, 182)
+script = ExtResource("1_rpy2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Player1_1" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_dpc0i")
+
+[node name="Detector" type="Area2D" parent="."]
+z_index = 1000
+
+[node name="Shape" type="CollisionShape2D" parent="Detector"]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_f7jis")
+
+[node name="Dialogos" type="CanvasLayer" parent="."]
+
+[node name="Dialog1" type="Sprite2D" parent="Dialogos"]
+visible = false
+position = Vector2(120, 194)
+
+[node name="Dialog" type="Sprite2D" parent="Dialogos/Dialog1"]
+position = Vector2(-2, -60)
+scale = Vector2(0.244, 0.268333)
+texture = ExtResource("3_h4sg8")
+
+[node name="Control" type="Control" parent="Dialogos/Dialog1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Dialogos/Dialog1/Control"]
+z_index = 1000
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = 0.075
+anchor_right = -0.2
+anchor_bottom = 0.075
+offset_left = -54.0
+offset_top = -103.0
+offset_right = 68.0
+offset_bottom = -54.0
+theme_override_fonts/font = SubResource("FontFile_qrj17")
+theme_override_font_sizes/font_size = 11
+text = "Olá! seja bem vindo ao 
+Soul Warrior Twins"
+metadata/_edit_use_anchors_ = true
+
+[node name="Dialog2" type="Sprite2D" parent="Dialogos"]
+visible = false
+position = Vector2(146, -45)
+
+[node name="Control" type="Control" parent="Dialogos/Dialog2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Dialogos/Dialog2/Control"]
+z_index = 1000
+layout_mode = 0
+offset_left = -54.0
+offset_top = -103.0
+offset_right = 68.0
+offset_bottom = -54.0
+theme_override_fonts/font = SubResource("FontFile_qrj17")
+theme_override_font_sizes/font_size = 11
+text = "Vamos começar!"
+
+[node name="Dialog" type="Sprite2D" parent="Dialogos/Dialog2"]
+position = Vector2(1, -62)
+scale = Vector2(0.244, 0.268333)
+texture = ExtResource("3_h4sg8")
+
+[node name="Avancar" type="TouchScreenButton" parent="Dialogos"]
+position = Vector2(168, 325)
+scale = Vector2(0.265625, 0.215385)
+texture_normal = ExtResource("4_2rgan")
+
+[node name="Retornar" type="TouchScreenButton" parent="Dialogos"]
+position = Vector2(50, 325)
+scale = Vector2(0.230769, 0.21875)
+texture_normal = ExtResource("5_686fv")

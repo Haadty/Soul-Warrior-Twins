@@ -90,8 +90,8 @@ enum Touching_Side {
 var input_direction := Vector2.ZERO
 var last_solid := Vector2(0, 0)
 
-signal player_jumped(last_solid, global_pos)
-signal player_hit(global_pos)
+#signal player_jumped(last_solid, global_pos)
+#signal player_hit(global_pos)
 
 var start_position := Vector2.ZERO
 
